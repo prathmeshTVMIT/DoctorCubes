@@ -1,0 +1,159 @@
+header {
+    background: linear-gradient(135deg, #008B8B 0%, #006666 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    height: 80px;
+}
+
+/* Logo on the Left */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.logo img {
+    max-height: 55px;
+    width: auto;
+    object-fit: contain;
+    animation: pulse 2.5s infinite;
+}
+
+/* Centered Text */
+.logo-text {
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Contact Info on the Right */
+.header-contact {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* Phone Icon */
+.header-contact i {
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+    color: #FFD700;
+    font-size: 20px;
+}
+.header-contact a{
+  text-decoration: none;
+  color: white;
+}
+
+/* Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Accessibility */
+.header-contact:focus,
+.logo-text:focus {
+    outline: 2px solid #FFD700;
+    outline-offset: 2px;
+}
+
+/* Enhanced Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 10px 4%;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+
+    .logo {
+        flex: none;
+        margin-bottom: 8px;
+    }
+
+    .logo img {
+        max-height: 45px;
+    }
+
+    .logo-text {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove transform */
+        font-size: 20px;
+        margin: 8px 0;
+    }
+
+    .header-contact {
+        flex: none;
+        justify-content: center;
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    .header-contact i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 3%;
+    }
+
+    .logo img {
+        max-height: 35px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .header-contact {
+        font-size: 14px;
+    }
+
+    .header-contact i {
+        font-size: 16px;
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    header {
+        padding: 6px 2%;
+    }
+
+    .logo img {
+        max-height: 30px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .header-contact {
+        font-size: 13px;
+    }
+
+    .header-contact i {
+        font-size: 14px;
+    }
+}
